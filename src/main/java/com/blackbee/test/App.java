@@ -1,50 +1,34 @@
 package com.blackbee.test;
 
+import com.blackbee.test.service.Output;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashSet;
 
-/**
- * Hello world!
- */
+
 public class App {
     public static void main(String[] args) throws IOException {
-        String keyword = "ducks";
+        String keyword = "duck";
         Document doc = Jsoup.connect("https://www.aboutyou.de/suche?term=" + keyword).get();
 
         Elements search = doc.getElementsByClass("row list-wrapper product-image-list");
-        Element searchDiv = search.get(0);
+        Element searchResultsDiv = search.get(0);
 
-        //Elements links = searchDiv.getElementsByTag("a");
-        Elements links = searchDiv.select("a[href]");
-        System.out.println(links);
+        Elements hrefsOfOffers = searchResultsDiv.select("a[href]");
 
-
-
-
-       /* Document doc = Jsoup.connect("https://www.aboutyou.de/p/save-the-duck/steppjacke-mit-kunstdaunen-3727286").get();
-        Elements info = doc.getElementsByClass("rc-tooltip-inner");
-
-
-        try(FileWriter writer = new FileWriter("output.xml", false))
-        {
-            // запись всей строки
-            //String text = "tu carne";
-            writer.write(info.toString());
-            // запись по символам
-            writer.append('\n');
-            writer.append('E');
-
-            writer.flush();
+        HashSet<String> linksOfOffers = new HashSet<>();
+        for (Element link : hrefsOfOffers) {
+            if (!link.attr("href").equals("")) {
+                linksOfOffers.add(link.attr("abs:href"));
+            }
         }
-        catch(IOException ex){
 
-            System.out.println(ex.getMessage());
-        }*/
+        Output.writeToXml(linksOfOffers);
+
+
     }
 }

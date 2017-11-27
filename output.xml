@@ -1,2 +1,93 @@
-
-E
+<offers>
+    <offer>
+        <brand>SAVE THE DUCK</brand>
+        <name>Winterjacke ARTIC-PARKA</name>
+        <oldprice>399,00€</oldprice>
+        <price>319,20€</price>
+        <size></size>
+    </offer>
+    <offer>
+        <brand>SAVE THE DUCK</brand>
+        <name>Steppmantel mit Fake-Fur-Besatz</name>
+        <oldprice>239,00€</oldprice>
+        <price>191,20€</price>
+        <size></size>
+    </offer>
+    <offer>
+        <brand>SAVE THE DUCK</brand>
+        <name>Steppmantel</name>
+        <oldprice>239,00€</oldprice>
+        <price>191,20€</price>
+        <size></size>
+    </offer>
+    <offer>
+        <brand>SAVE THE DUCK</brand>
+        <name>Steppmantel mit Fake-Fur-Besatz</name>
+        <oldprice>239,00€</oldprice>
+        <price>191,20€</price>
+        <size></size>
+    </offer>
+    <offer>
+        <brand>SAVE THE DUCK</brand>
+        <name>Jacke 'GIUBBOTTO CAPPUCCIO'</name>
+        <oldprice>149,00€</oldprice>
+        <price>134,10€</price>
+        <size></size>
+    </offer>
+    <offer>
+        <brand>Frieda & Freddies</brand>
+        <name>Steppmantel FAKE DOWN JACKET</name>
+        <oldprice></oldprice>
+        <price>179,95€</price>
+        <size></size>
+    </offer>
+    <offer>
+        <brand>SAVE THE DUCK</brand>
+        <name>Steppjacke mit Kunstdaunen</name>
+        <oldprice>149,00€</oldprice>
+        <price>119,20€</price>
+        <size></size>
+    </offer>
+    <offer>
+        <brand>SAVE THE DUCK</brand>
+        <name>Steppjacke mit Kunstdaunen</name>
+        <oldprice>149,00€</oldprice>
+        <price>119,20€</price>
+        <size></size>
+    </offer>
+    <offer>
+        <brand>SAVE THE DUCK</brand>
+        <name>Jacke 'GIUBBOTTO CAPPUCCIO'</name>
+        <oldprice>149,00€</oldprice>
+        <price>126,65€</price>
+        <size></size>
+    </offer>
+    <offer>
+        <brand>Frieda & Freddies</brand>
+        <name>Steppmantel FAKE DOWN JACKET</name>
+        <oldprice>179,95€</oldprice>
+        <price>143,96€</price>
+        <size></size>
+    </offer>
+    <offer>
+        <brand>SAVE THE DUCK</brand>
+        <name>Steppjacke mit Kunstdaunen</name>
+        <oldprice>149,00€</oldprice>
+        <price>119,20€</price>
+        <size></size>
+    </offer>
+    <offer>
+        <brand>SAVE THE DUCK</brand>
+        <name>Steppjacke 'GIUBBOTTO'</name>
+        <oldprice>149,00€</oldprice>
+        <price>134,10€</price>
+        <size></size>
+    </offer>
+    <offer>
+        <brand>SAVE THE DUCK</brand>
+        <name>Steppjacke mit Synthetikdaune</name>
+        <oldprice></oldprice>
+        <price>149,00€</price>
+        <size></size>
+    </offer>
+</offers>
