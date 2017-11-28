@@ -1,1 +1,2 @@
-com\blackbee\test\App.class
+com\blackbee\test\Main.class
+com\blackbee\test\service\ParserService.class

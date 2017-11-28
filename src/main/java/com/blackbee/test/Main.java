@@ -6,9 +6,9 @@ import java.util.HashSet;
 import static com.blackbee.test.service.ParserService.getOffers;
 
 
-public class App {
+public class Main {
     public static void main(String[] args) throws IOException {
-        String keyword = "args[0]";
+        String keyword = "duck";
         String link = "https://www.aboutyou.de/suche?term=" + keyword;
 
         HashSet<String> linksOfOffers = new HashSet<>();
