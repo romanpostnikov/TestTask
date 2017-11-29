@@ -9,41 +9,38 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashSet;
 
-public class ParserService{
+public class ParserService {
     /**
-     *
-     * @param searchLink
-     * This is a link to search goods
-     * for a particular keyword
-     *
-     * @param linksOfOffers
-     * A collection created to store links to the goods
-     *
+     * @param searchLink    This is a link to search goods
+     *                      for a particular keyword
+     * @param linksOfOffers A collection created to store links to the goods
      */
-    public static void getOffers(String searchLink, HashSet<String> linksOfOffers) throws IOException {
+    public static void getOffers(String searchLink, HashSet<String> linksOfOffers) {
 
-        Document doc = Jsoup.connect(searchLink).get();
-        Elements search = doc.getElementsByClass("row list-wrapper product-image-list");
+        try {
+            Document doc = Jsoup.connect(searchLink).get();
+            Elements search = doc.getElementsByClass("row list-wrapper product-image-list");
 
-        for (Element link : search.select("a[href]")) {
-            if (!link.attr("href").equals("")) {
-                if (link.attr("abs:href").contains("https://www.aboutyou.de/suche")) {
-                    writeToXml(linksOfOffers);
-                    getOffers(link.attr("abs:href"), linksOfOffers);
-                } else {
-                    linksOfOffers.add(link.attr("abs:href"));
+            for (Element link : search.select("a[href]")) {
+                if (!link.attr("href").equals("")) {
+                    if (link.attr("abs:href").contains("https://www.aboutyou.de/suche")) {
+                        writeToXml(linksOfOffers);
+                        getOffers(link.attr("abs:href"), linksOfOffers);
+                    } else {
+                        linksOfOffers.add(link.attr("abs:href"));
+                    }
                 }
             }
+            writeToXml(linksOfOffers);
+        } catch (IOException e) {
+            System.out.println("GetOffers method stopped because of " + e.toString());
         }
-        writeToXml(linksOfOffers);
+
     }
 
     /**
-     *
-     * @param linksOfOffers
-     * This parameter is a collection of links with goods
-     * that are available for the current keyword
-     *
+     * @param linksOfOffers This parameter is a collection of links with goods
+     *                      that are available for the current keyword
      */
     public static void writeToXml(HashSet<String> linksOfOffers) {
         Document doc;
