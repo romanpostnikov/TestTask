@@ -10,6 +10,16 @@ import java.io.IOException;
 import java.util.HashSet;
 
 public class ParserService {
+    /**
+     *
+     * @param searchLink
+     * This is a link to search goods
+     * for a particular keyword
+     *
+     * @param linksOfOffers
+     * A collection created to store links to the goods
+     *
+     */
     public static void getOffers(String searchLink, HashSet<String> linksOfOffers) throws IOException {
 
         Document doc = Jsoup.connect(searchLink).get();
@@ -28,7 +38,13 @@ public class ParserService {
         writeToXml(linksOfOffers);
     }
 
-
+    /**
+     *
+     * @param linksOfOffers
+     * This parameter is a collection of links with goods
+     * that are available for the current keyword
+     *
+     */
     public static void writeToXml(HashSet<String> linksOfOffers) {
         Document doc;
         Elements brand;
@@ -73,7 +89,7 @@ public class ParserService {
             writer.write("</offers>");
 
         } catch (IOException e) {
-            System.out.println("The information is not written to the file");
+            System.out.println("The parsing result is not written to the file");
         }
 
     }
