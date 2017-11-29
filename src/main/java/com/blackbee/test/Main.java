@@ -21,10 +21,8 @@
  * Your Parser should run on Windows systems and Linux based environments
  * Extract the attributes in the format they are presented on the web page
  *
- * The .jar file is not built properly and i can't actually fint the problem.
- * But it's working good if you run it from Idea.
  *
- * Also couldn't get the color of an item because the tag
+ * Couldn't get the color of an item because the tag
  * with color appear only when there is a pointer on color section.
  * The size is also not displayed properly, but the query seems to be okay maybe
  * something i missed

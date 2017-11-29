@@ -9,7 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashSet;
 
-public class ParserService {
+public class ParserService{
     /**
      *
      * @param searchLink
