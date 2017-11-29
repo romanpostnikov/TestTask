@@ -54,6 +54,7 @@ public class ParserService {
 
         try (FileWriter writer = new FileWriter("output.xml", false)) {
 
+            writer.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
             writer.write("<offers>\n");
 
             for (String link : linksOfOffers) {
