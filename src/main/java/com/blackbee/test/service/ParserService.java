@@ -42,7 +42,7 @@ public class ParserService {
      * @param linksOfOffers This parameter is a collection of links with goods
      *                      that are available for the current keyword
      */
-    public static void writeToXml(HashSet<String> linksOfOffers) {
+    private static void writeToXml(HashSet<String> linksOfOffers) {
         Document doc;
         Elements brand;
         Elements name;
@@ -67,8 +67,10 @@ public class ParserService {
                 name = doc.select("div[class^=name]");
                 writer.write(indent + indent + "<name>" + name.text() + "</name>\n");
 
-                oldPrice = doc.select("[class^=beforePrice]");
-                writer.write(indent + indent + "<oldprice>" + oldPrice.text() + "</oldprice>\n");
+                oldPrice = doc.select("[class^=originalPrice]");
+                if(!oldPrice.isEmpty()){
+                    writer.write(indent + indent + "<oldprice>" + oldPrice.text() + "</oldprice>\n");
+                }
 
                 price = doc.select("span[class^=price]");
                 if (price.isEmpty()) {
@@ -77,6 +79,7 @@ public class ParserService {
                 writer.write(indent + indent + "<price>" + price.text() + "</price>\n");
 
                 size = doc.select("div[class^=column] :not([class^=disabled])");
+
                 writer.write(indent + indent + "<size>" + size.text() + "</size>\n");
 
                 description = doc.select("[class^=attributeWrapper]");
